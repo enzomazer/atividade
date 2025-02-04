@@ -1,13 +1,48 @@
-Middleware é um software que age como ponte entre sistemas e componentes, facilitando a comunicação e o gerenciamento de dados. Em desenvolvimento, ele processa requisições HTTP ao manipular requisições ou respostas antes do destino final. Em Node.js com Express, o middleware pode interceptar requisições para modificar, autenticar ou registrar informações.
+Essa API tem como tema o gerenciamento de músicas, possibilitando CRUD de uma lista de músicas
+Cada música possui ID, título, Banda, Duração e Álbum
 
-Funcionalidades
-Autenticação e Autorização: Verificar credenciais do usuário antes de permitir acesso a determinadas rotas.
-Logging: Registrar informações sobre requisições, como URL, método HTTP, data e hora.
-Manipulação de Dados: Alterar ou validar dados antes de passá-los para o controlador.
-Gerenciamento de Sessão e Cookies: Armazenar e recuperar dados de sessão ou cookies.
-Tratamento de Erros: Capturar e tratar erros para retornar mensagens apropriadas.
+Para rodar o projeto utilize no terminal:
+npm i
+node server.js
 
-Tipos Comuns de Middleware
-Middleware de Autenticação: Verifica se o usuário tem permissão para acessar determinada rota.
-Middleware de Logging: Grava informações sobre a requisição, como URL e método.
-Middleware de Manipulação de Dados: Valida ou altera dados da requisição.
+A rota utilizada é http://localhost:3000/api/musicas
+Ela pode ser aberta no POSTMAN para testes
+Utilize x-www-form-urlencoded
+
+Rotas disponíveis e exemplos:
+
+Criar uma nova música
+Método: POST
+URL: http://localhost:3000/api/musicas
+Exemplo de parâmetros: {
+  "titulo": "Hotel California",
+  "banda": "Eagles",
+  "duracao": "6:30",
+  "album": "Hotel California"
+}
+
+Listar todas as músicas
+Método: GET
+URL: http://localhost:3000/api/musicas
+Parâmetros não necessários
+
+Listar música específica
+Método: GET
+URL: http://localhost:3000/api/musicas/1
+ID da música especificada na URL como parâmetro
+
+Modificar música
+Método: PUT
+URL: http://localhost:3000/api/musicas/1
+ID da música especificada na URL
+Exemplo de parâmetros: {
+  "titulo": "We Will Rock You",
+  "banda": "Queen",
+  "duracao": "2:02",
+  "album": "News of the World"
+}
+
+Excluir música
+Método: DELETE
+URL: http://localhost:3000/api/musicas/1
+ID da música especificada na URL como parâmetro
